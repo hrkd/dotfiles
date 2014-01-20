@@ -39,7 +39,6 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'alpaca-tc/alpaca_powertabline'
 NeoBundle 'itchyny/lightline.vim'
 
 NeoBundle 'Shougo/unite.vim'
