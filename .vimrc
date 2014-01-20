@@ -40,11 +40,9 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'itchyny/lightline.vim'
-
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'tomasr/molokai'
-
 NeoBundle 'mattn/emmet-vim'
 
 
