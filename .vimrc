@@ -112,3 +112,5 @@ set clipboard=unnamed
 set backspace=indent,eol,start
 
 imap <C-j> <Esc>:w<cr>
+
+set showtabline=2
