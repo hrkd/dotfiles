@@ -39,7 +39,8 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'itchyny/lightline.vim'
+" NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'Lokaltog/powerline',{'rtp':'powerline/bindings/vim'}
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'tomasr/molokai'
@@ -78,6 +79,10 @@ set showmatch " 対応する括弧をハイライト
 set number " 行番号表示
 set list " 不可視文字表示
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
+set encoding=utf-8
+set guifont=Ricty_for_Powerline:h10
+set guifontwide=Ricty:h10
+ let g:Powerline_symbols='fancy'
 
 "set listchars=tab:>\ ,extends:<
 " 全角スペースの表示
