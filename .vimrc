@@ -44,6 +44,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'othree/eregex.vim'
 
 
 filetype plugin indent on     " Required!
@@ -114,3 +115,8 @@ set backspace=indent,eol,start
 imap <C-j> <Esc>:w<cr>
 
 set showtabline=2
+
+nnoremap / :M/
+nnoremap ? :M?
+nnoremap ,/ /
+nnoremap ,? ?
