@@ -14,14 +14,14 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
-NeoBundle 'Shougo/vimproc', {
-        \ 'build' : {
-                \ 'windows' : 'make -f make_mingw32.mak',
-                \ 'cygwin' : 'make -f make_cygwin.mak',
-                \ 'mac' : 'make -f make_mac.mak',
-                \ 'unix' : 'make -f make_unix.mak',
-        \ },
-\ }
+" NeoBundle 'Shougo/vimproc', {
+"   \ 'build' : {
+"     \ 'windows' : 'make -f make_mingw32.mak',
+"     \ 'cygwin' : 'make -f make_cygwin.mak',
+"     \ 'mac' : 'make -f make_mac.mak',
+"     \ 'unix' : 'make -f make_unix.mak',
+"   \ },
+" \ }
 
 
 " Brief help
@@ -31,20 +31,21 @@ NeoBundle 'Shougo/vimproc', {
 
 
 NeoBundle 'Shougo/neobundle.vim'
-" NeoBundle 'Shougo/vimproc'
-NeoBundle 'VimClojure'
-NeoBundle 'Shougo/vimshell'
+NeoBundle 'tomasr/molokai'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'jpalardy/vim-slime'
+" NeoBundle 'Lokaltog/powerline',{'rtp':'powerline/bindings/vim'}
+NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'scrooloose/syntastic'
-" NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'Lokaltog/powerline',{'rtp':'powerline/bindings/vim'}
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'tomasr/molokai'
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'othree/eregex.vim'
+NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'jpalardy/vim-slime'
+
+" NeoBundle 'Shougo/vimshell'
+" NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/unite.vim'
 
 
 filetype plugin indent on     " Required!
@@ -82,7 +83,14 @@ set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
 set encoding=utf-8
 set guifont=Ricty_for_Powerline:h10
 set guifontwide=Ricty:h10
- let g:Powerline_symbols='fancy'
+" let g:Powerline_symbols='fancy'
+let g:lightline= {
+  \'colorscheme' : 'default',
+  \ 'component': {
+  \   'readonly': '%{&readonly?"⭤":""}',
+  \ },
+  \'separator': { 'left': '', 'right': '' }
+  \}
 
 "set listchars=tab:>\ ,extends:<
 " 全角スペースの表示
@@ -107,6 +115,11 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 inoremap <C-j> <Esc>
+
+noremap / :M/
+noremap ? :M?
+noremap ,/ /
+noremap ,? ?
 
 set softtabstop=2
 set tabstop=2
