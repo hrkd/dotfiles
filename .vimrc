@@ -42,6 +42,7 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'othree/eregex.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'jpalardy/vim-slime'
+NeoBundle 'othree/eregex.vim'
 
 " NeoBundle 'Shougo/vimshell'
 " NeoBundle 'Shougo/vimproc'
@@ -116,11 +117,6 @@ inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 inoremap <C-j> <Esc>
 
-noremap / :M/
-noremap ? :M?
-noremap ,/ /
-noremap ,? ?
-
 set softtabstop=2
 set tabstop=2
 set shiftwidth=2
@@ -132,3 +128,8 @@ set backspace=indent,eol,start
 imap <C-j> <Esc>:w<cr>
 
 set showtabline=2
+
+nnoremap / :M/
+nnoremap ? :M?
+nnoremap ,/ /
+nnoremap ,? ?
