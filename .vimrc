@@ -187,3 +187,7 @@ nnoremap <CR> o<ESC>
 
 "折り返しの禁止
 set nowrap
+
+"esteWatchに更新通知を都度渡せるよう
+set nobackup
+set nowritebackup
