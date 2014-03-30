@@ -45,6 +45,7 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'othree/eregex.vim'
+NeoBundle 'digitaltoad/vim-jade'
 
 
 filetype plugin indent on     " Required!
