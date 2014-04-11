@@ -48,6 +48,7 @@ NeoBundle 'othree/eregex.vim'
 " NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'fuenor/im_control.vim'
+NeoBundle 'tpope/vim-fugitive'
 
 
 
@@ -151,3 +152,6 @@ nnoremap <CR> o<ESC>
 
 "折り返しの禁止
 set nowrap
+
+"http://marutanm.hatenablog.com/entry/20110706/p1
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
