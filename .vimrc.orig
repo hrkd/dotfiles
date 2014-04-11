@@ -1,7 +1,4 @@
 " ----------------------------------------------------------------------------------------
-"
-"
-"
 "   neobundle
 " ----------------------------------------------------------------------------------------
 set nocompatible               " Be iMproved
@@ -43,14 +40,19 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'othree/eregex.vim'
+<<<<<<< HEAD
 NeoBundle 'digitaltoad/vim-jade'
+=======
+NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'othree/eregex.vim'
 
 " NeoBundle 'Shougo/vimshell'
 " NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/unite.vim'
 NeoBundle 'fuenor/im_control.vim'
-NeoBundle 'tpope/vim-fugitive'
 
+>>>>>>> origin/master
 
 
 filetype plugin indent on     " Required!
@@ -62,6 +64,14 @@ NeoBundleCheck
 "------------------------------------
 " Color
 "------------------------------------
+let g:lightline ={
+      \'component':{
+      \'readonly':'%{&readonly?"\u2b64":""}',
+      \},
+      \'separator':{'left':"\u2b80",'right':"\u2b82"},
+      \'subseparator':{'left':"\u2b81",'right':"\u2b83"},
+      \}
+
 set t_Co=256
 
 colorscheme molokai
@@ -83,54 +93,11 @@ set guifontwide=Ricty:h10
 " let g:Powerline_symbols='fancy'
 let g:lightline= {
   \'colorscheme' : 'default',
-  \'active': {
-  \  'left': [['mode','paste'],['fugitive','filename']]
-  \},
-  \'component_function': {
-  \ 'fugitive' : 'MyFugitive',
-  \ 'readonly' : 'MyReadonly',
-  \ 'modified' : 'MyModified',
-  \ 'filename' : 'MyFilename'
-  \},
-  \'separator':{'left':"\u2b80",'right':"\u2b82"},
-  \'subseparator':{'left':"\u2b81",'right':"\u2b83"}
+  \ 'component': {
+  \   'readonly': '%{&readonly?"⭤":""}',
+  \ },
+  \'separator': { 'left': '', 'right': '' }
   \}
-
-function! MyModified()
-  if &filetype == "help"
-    return ""
-  elseif &modified
-    return "+"
-  elseif &modifiable
-    return ""
-  else
-    return ""
-  endif
-endfunction
-
-function! MyReadonly()
-  if &filetype == "help"
-    return ""
-  elseif &readonly
-    return "⭤"
-  else
-    return ""
-  endif
-endfunction
-
-function! MyFugitive()
-  if exists("*fugitive#head")
-   let _ = fugitive#head()
-   return strlen(_) ? '⭠ '._ : ''
-  endif
-  return ''
-endfunction
-
-function! MyFilename()
-  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-   \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
-   \ ('' != MyModified() ? ' ' . MyModified() : '')
-endfunction
 
 "set listchars=tab:>\ ,extends:<
 " 全角スペースの表示
@@ -188,10 +155,3 @@ nnoremap <CR> o<ESC>
 
 "折り返しの禁止
 set nowrap
-
-"http://marutanm.hatenablog.com/entry/20110706/p1
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
-"esteWatchに更新通知を都度渡せるよう
-set nobackup
-set nowritebackup
