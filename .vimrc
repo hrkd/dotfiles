@@ -189,6 +189,9 @@ nnoremap ? :M?
 nnoremap ,/ /
 nnoremap ,? ?
 
+"remap paste
+nnoremap P p
+nnoremap p P
 "http://www.daisaru11.jp/blog/2011/08/vim%E3%81%A7%E6%8C%BF%E5%85%A5%E3%83%A2%E3%83%BC%E3%83%89%E3%81%AB%E3%81%AA%E3%82%89%E3%81%9A%E3%81%AB%E6%94%B9%E8%A1%8C%E3%82%92%E5%85%A5%E3%82%8C%E3%82%8B/
 nnoremap <CR> o<ESC>
 
@@ -201,3 +204,9 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 "esteWatchに更新通知を都度渡せるよう
 set nobackup
 set nowritebackup
+
+"http://qiita.com/usamik26/items/f733add9ca910f6c5784
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
