@@ -156,7 +156,7 @@ inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 "insert mode から抜ける
-inoremap <silent> jj <Esc>
+inoremap <silent> jj <Esc><Right>
 
 "挿入モードでカーソル移動
 inoremap <C-j> <Down>
