@@ -33,22 +33,26 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
 
+NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'tomasr/molokai'
 NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neomru'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'Shougo/vimfiler'
 " NeoBundle 'Lokaltog/powerline',{'rtp':'powerline/bindings/vim'}
+NeoBundle 'tomasr/molokai'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'othree/eregex.vim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'othree/eregex.vim'
+NeoBundle 'scrooloose/nerdtree'
 
 " NeoBundle 'Shougo/vimshell'
 " NeoBundle 'Shougo/vimproc'
-NeoBundle 'fuenor/im_control.vim'
+"NeoBundle 'fuenor/im_control.vim'
 NeoBundle 'tpope/vim-fugitive'
 
 
@@ -82,19 +86,21 @@ set guifont=Ricty_for_Powerline:h10
 set guifontwide=Ricty:h10
 " let g:Powerline_symbols='fancy'
 let g:lightline= {
-  \'colorscheme' : 'default',
-  \'active': {
-  \  'left': [['mode','paste'],['fugitive','filename']]
-  \},
-  \'component_function': {
-  \ 'fugitive' : 'MyFugitive',
-  \ 'readonly' : 'MyReadonly',
-  \ 'modified' : 'MyModified',
-  \ 'filename' : 'MyFilename'
-  \},
-  \'separator':{'left':"\u2b80",'right':"\u2b82"},
-  \'subseparator':{'left':"\u2b81",'right':"\u2b83"}
-  \}
+\  'colorscheme' : 'default',
+\  'active': {
+\    'left': [['mode','paste'],['fugitive','filename']]
+\  },
+\  'component_function': {
+\    'fugitive' : 'MyFugitive',
+\    'readonly' : 'MyReadonly',
+\    'modified' : 'MyModified',
+\    'filename' : 'MyFilename'
+\  }
+\}
+",
+"  \'separator':{'left':"\u2b80",'right':"\u2b82"},
+"  \'subseparator':{'left':"\u2b81",'right':"\u2b83"}
+"  \}
 
 function! MyModified()
   if &filetype == "help"
@@ -188,6 +194,7 @@ nnoremap / :M/
 nnoremap ? :M?
 nnoremap ,/ /
 nnoremap ,? ?
+nnoremap ,v :VimFilerExplorer<CR>
 
 "remap paste
 nnoremap P p
