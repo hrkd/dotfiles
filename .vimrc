@@ -165,19 +165,19 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 inoremap <silent> jj <Esc><Right>
 
 "挿入モードでカーソル移動
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
+"inoremap <C-j> <Down>
+"inoremap <C-k> <Up>
+"inoremap <C-h> <Left>
+"inoremap <C-l> <Right>
 
 "http://d.hatena.ne.jp/yascentur/20120219/1329578432
-inoremap () ()<Left>
-inoremap {} {}<Left>
-inoremap [] []<Left>
+inoremap ( ()<Left>
+inoremap { {}<Left>
+inoremap [ []<Left>
 inoremap <> <><Left>
-inoremap "" ""<Left>
-inoremap '' ''<Left>
-inoremap `` ``<Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
+inoremap ` ``<Left>
 
 
 set softtabstop=2
