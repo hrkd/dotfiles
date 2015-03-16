@@ -13,6 +13,7 @@ endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
+"----------------------------
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Recommended to install
@@ -36,40 +37,32 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplcache'
-" NeoBundle 'Shougo/neomru'
+
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/vimfiler'
-" NeoBundle 'Lokaltog/powerline',{'rtp':'powerline/bindings/vim'}
+
 NeoBundle 'tomasr/molokai'
 NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'othree/eregex.vim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'othree/eregex.vim'
-NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/syntastic'
 
-" NeoBundle 'Shougo/vimshell'
-" NeoBundle 'Shougo/vimproc'
-"NeoBundle 'fuenor/im_control.vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'wavded/vim-stylus'
 
 
 
 filetype plugin indent on     " Required!
 
 " Installation check.
+"----------------------------
 
 NeoBundleCheck
 
-"------------------------------------
-" Color
-"------------------------------------
-set t_Co=256
-
-colorscheme molokai
-syntax on
 
 "------------------------------------
 " Show
@@ -81,10 +74,18 @@ set showmatch " 対応する括弧をハイライト
 set number " 行番号表示
 set list " 不可視文字表示
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
+
 set encoding=utf-8
-set guifont=Ricty_for_Powerline:h10
-set guifontwide=Ricty:h10
-" let g:Powerline_symbols='fancy'
+
+"------------------------------------
+" Color
+"------------------------------------
+set t_Co=256
+
+colorscheme molokai
+syntax on
+
+
 let g:lightline= {
 \  'colorscheme' : 'default',
 \  'active': {
@@ -97,10 +98,6 @@ let g:lightline= {
 \    'filename' : 'MyFilename'
 \  }
 \}
-",
-"  \'separator':{'left':"\u2b80",'right':"\u2b82"},
-"  \'subseparator':{'left':"\u2b81",'right':"\u2b83"}
-"  \}
 
 function! MyModified()
   if &filetype == "help"
@@ -140,50 +137,64 @@ endfunction
 
 "set listchars=tab:>\ ,extends:<
 " 全角スペースの表示
+"----------------------------
 highlight ZenkakuSpace cterm=underline ctermfg=red guibg=darkgray
 match ZenkakuSpace /　/
 set cursorline " カーソル行をハイライト
+
 " set ttyfast 
+"----------------------------
 
 let g:neocomplcache_enable_at_startup = 1
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
+"----------------------------
+
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return neocomplcache#smart_close_popup() . "\<CR>"
 endfunction
+
 " <TAB>: completion.
+"----------------------------
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+"----------------------------
+"inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+"inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 "insert mode から抜ける
+"----------------------------
 inoremap <silent> jj <Esc><Right>
 
 "挿入モードでカーソル移動
+"----------------------------
 "inoremap <C-j> <Down>
 "inoremap <C-k> <Up>
 "inoremap <C-h> <Left>
 "inoremap <C-l> <Right>
 
 "http://d.hatena.ne.jp/yascentur/20120219/1329578432
-inoremap ( ()<Left>
-inoremap { {}<Left>
-inoremap [ []<Left>
-inoremap <> <><Left>
-inoremap " ""<Left>
-inoremap ' ''<Left>
-inoremap ` ``<Left>
+"----------------------------
+"inoremap ( ()<Left>
+"inoremap { {}<Left>
+"inoremap [ []<Left>
+"inoremap <> <><Left>
+"inoremap " ""<Left>
+"inoremap ' ''<Left>
+"inoremap ` ``<Left>
 
 
-set softtabstop=2
-set tabstop=2
-set shiftwidth=2
+set softtabstop=4
+set tabstop=4
+set shiftwidth=4
 set expandtab
+set autoindent
+set smartindent
 
 set clipboard=unnamed
 set backspace=indent,eol,start
@@ -197,22 +208,29 @@ nnoremap ,? ?
 nnoremap ,v :VimFilerExplorer<CR>
 
 "remap paste
+"----------------------------
 nnoremap P p
 nnoremap p P
+
 "http://www.daisaru11.jp/blog/2011/08/vim%E3%81%A7%E6%8C%BF%E5%85%A5%E3%83%A2%E3%83%BC%E3%83%89%E3%81%AB%E3%81%AA%E3%82%89%E3%81%9A%E3%81%AB%E6%94%B9%E8%A1%8C%E3%82%92%E5%85%A5%E3%82%8C%E3%82%8B/
+"----------------------------
 nnoremap <CR> o<ESC>
 
 "折り返しの禁止
+"----------------------------
 set nowrap
 
 "http://marutanm.hatenablog.com/entry/20110706/p1
+"----------------------------
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 "esteWatchに更新通知を都度渡せるよう
+"----------------------------
 set nobackup
 set nowritebackup
 
 "http://qiita.com/usamik26/items/f733add9ca910f6c5784
+"----------------------------
 let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
