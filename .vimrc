@@ -40,7 +40,7 @@ NeoBundle 'Shougo/neocomplcache'
 
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/vimfiler'
+"NeoBundle 'Shougo/vimfiler'
 
 NeoBundle 'tomasr/molokai'
 NeoBundle 'itchyny/lightline.vim'
@@ -53,7 +53,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'wavded/vim-stylus'
-
+NeoBundle 'scrooloose/nerdtree'
 
 
 filetype plugin indent on     " Required!
@@ -258,3 +258,16 @@ let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
+
+
+" @see http://kontany.net/blog/?p=112
+" 隠しファイルをデフォルトで表示させる
+let NERDTreeShowHidden = 1
+
+" @see http://uskey512.hatenablog.com/entry/20120413/1334323877
+" 引数なしで実行したとき、NERDTreeを実行する
+let file_name = expand("%:p")
+if has('vim_starting') &&  file_name == ""
+    autocmd VimEnter * execute 'NERDTree ./'
+endif
+
