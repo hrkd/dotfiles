@@ -228,7 +228,8 @@ nnoremap / :M/
 nnoremap ? :M?
 nnoremap ,/ /
 nnoremap ,? ?
-nnoremap ,v :VimFilerExplorer<CR>
+"nnoremap ,v :VimFilerExplorer<CR>
+nnoremap ,v :NERDTree<CR>
 
 "remap paste
 "----------------------------
@@ -271,3 +272,9 @@ if has('vim_starting') &&  file_name == ""
     autocmd VimEnter * execute 'NERDTree ./'
 endif
 
+
+" @see http://gg-hogehoge.hatenablog.com/entry/2014/04/05/230043
+" 自分用 snippet ファイルの場所
+"
+let s:my_snippet = '~/snippet/'
+let g:neosnippet#snippets_directory = s:my_snippet
