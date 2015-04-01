@@ -1,0 +1,11 @@
+[user]
+	name = hrkd
+	email = hiroki@hrkd.net
+
+[alias]
+  s = status
+  ch = checkout
+  b = branch
+  c = commit
+  a = add
+  l = log --oneline --decorate --graph --branches --tags --remotes
