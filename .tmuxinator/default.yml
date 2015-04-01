@@ -1,4 +1,4 @@
-# ~/.tmuxinator/hrkd_dev.yml
+# ~/.tmuxinator/default.yml
 
 name: default
 root: ~/
@@ -26,9 +26,15 @@ windows:
       layout: cfd0,364x81,0,0{256x81,0,0[256x60,0,0,0,256x20,0,61{127x20,0,61,1,64x20,128,61,3,63x20,193,61,4}],107x81,257,0[107x35,257,0,5,107x45,257,36,6]}
       panes:
         - pane1:
-          - vim
+            - cd ~/
         - pane2:
+            - cd ~/
         - pane3:
+            - cd ~/
         - pane4:
+            - cd ~/
         - pane5:
+            - cd ~/
         - pane6:
+            - cd ~/
+
