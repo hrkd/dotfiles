@@ -7,4 +7,5 @@
 !/.tmuxinator/
 !/snippet/
 !/.gitconfig
+!/install.sh
 
