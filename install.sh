@@ -33,6 +33,7 @@ brew cask install chefdk
 brew cask install karabiner
 brew cask install adobe-creative-cloud
 brew cask install microsoft-office
+brew cask install kobito
 
 #chef
 sudo chef gem install knife-solo
