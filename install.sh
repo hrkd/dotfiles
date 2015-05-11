@@ -13,8 +13,14 @@ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | 
 brew doctor
 brew install caskroom/cask/brew-cask
 brew install tmux
-brew install npm
+brew install nodejs
 brew install tig
+brew install imagemagick
+brew install postgresql
+brew install mysql
+brew install rbenv ruby-build
+echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+source ~/.zshrc
 
 brew cask install google-chrome
 brew cask install skype
@@ -33,7 +39,7 @@ brew cask install chefdk
 brew cask install karabiner
 brew cask install adobe-creative-cloud
 brew cask install microsoft-office
-brew cask install kobito
+brew cask install heroku-toolbelt
 
 #chef
 sudo chef gem install knife-solo
@@ -43,6 +49,14 @@ defaults write com.apple.finder AppleShowAllFiles -boolean true
 killall Finder
 
 sudo gem install tmuxinator
+sudo gem install bundler
+sudo gem install rails
+sudo gem install compass
+sudo gem install mysql2 -v '0.3.17'
+sudo gem install execjs
 
 sudo npm install -g gulp
+sudo npm install -g grunt-cli
 sudo npm install -g bower
+sudo npm install -g yo
+sudo npm install -g generator-angular
