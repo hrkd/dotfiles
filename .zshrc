@@ -57,12 +57,12 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+#Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -85,3 +85,10 @@ alias ready='mux hrkd_dev'
 
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 [[ -s /Users/hrkd/.tmuxinator/scripts/tmuxinator ]] && source /Users/hrkd/.tmuxinator/scripts/tmuxinator
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export PATH="$HOME/.rbenv/shims:$PATH"
+eval "$(rbenv init -)"
+
