@@ -1,11 +1,1 @@
-/*
-
-!/.gitignore
-!/.vimrc
-!/.tmux.conf
-!/.zshrc
-!/.tmuxinator/
-!/snippet/
-!/.gitconfig
-!/install.sh
-
+.tmuxinator/*.yml
