@@ -57,6 +57,10 @@ NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'wavded/vim-stylus'
 NeoBundle 'scrooloose/nerdtree'
 
+"インデントをわかりやすく表示
+NeoBundle 'nathanaelkane/vim-indent-guides'
+
+NeoBundle 'violetyk/cake.vim'
 
 filetype plugin indent on     " Required!
 
@@ -203,20 +207,9 @@ inoremap <silent> jj <Esc><Right>
 "inoremap <C-h> <Left>
 "inoremap <C-l> <Right>
 
-"http://d.hatena.ne.jp/yascentur/20120219/1329578432
-"----------------------------
-"inoremap ( ()<Left>
-"inoremap { {}<Left>
-"inoremap [ []<Left>
-"inoremap <> <><Left>
-"inoremap " ""<Left>
-"inoremap ' ''<Left>
-"inoremap ` ``<Left>
-
-
-set softtabstop=4
-set tabstop=4
-set shiftwidth=4
+set softtabstop=2
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set autoindent
 set smartindent
@@ -280,3 +273,26 @@ endif
 "
 let s:my_snippet = '~/snippet/'
 let g:neosnippet#snippets_directory = s:my_snippet
+
+" 閉じタグ補完
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
+vnoremap { "zdi^V{<C-R>z}<LEFT>
+vnoremap [ "zdi^V[<C-R>z]<LEFT>
+vnoremap ( "zdi^V(<C-R>z)<LEFT>
+vnoremap " "zdi^V"<C-R>z^V"<LEFT>
+vnoremap ' "zdi'<C-R>z'<LEFT>
+
+"インデントをわかりやすく表示
+" vim-indent-guides
+
+let g:indent_guides_auto_colors=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#393939 ctermbg=235
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_guide_size=1
+let g:indentLine_faster = 1
+
