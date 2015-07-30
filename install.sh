@@ -18,6 +18,7 @@ brew install tig
 brew install imagemagick
 brew install postgresql
 brew install mysql
+brew install qt
 brew install rbenv ruby-build
 echo 'eval "$(rbenv init -)"' >> ~/.zshrc
 source ~/.zshrc
