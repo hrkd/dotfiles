@@ -62,6 +62,8 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 
 NeoBundle 'violetyk/cake.vim'
 
+NeoBundle 'sophacles/vim-processing'
+
 filetype plugin indent on     " Required!
 
 " Installation check.
