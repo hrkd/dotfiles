@@ -63,6 +63,7 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'violetyk/cake.vim'
 
 NeoBundle 'sophacles/vim-processing'
+NeoBundle 'thinca/vim-quickrun'
 
 filetype plugin indent on     " Required!
 
@@ -298,3 +299,9 @@ let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=1
 let g:indentLine_faster = 1
 
+"see http://kazuph.hateblo.jp/entry/2013/03/20/211336
+let g:quickrun_config = {}
+let g:quickrun_config.processing =  {
+\     'command': 'processing-java',
+\     'exec': '%c --sketch=$PWD/ --output=/Library/Processing --run --force',
+\   }

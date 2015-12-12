@@ -1,0 +1,61 @@
+"------------------------------------
+" Show
+"------------------------------------
+set ruler " ルーラーを表示
+set showmatch " 対応する括弧をハイライト
+set list " 不可視文字表示
+set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
+
+
+
+"set listchars=tab:>\ ,extends:<
+" 全角スペースの表示
+"----------------------------
+highlight ZenkakuSpace cterm=underline ctermfg=red guibg=darkgray
+match ZenkakuSpace /　/
+set cursorline " カーソル行をハイライト
+
+
+
+"insert mode から抜ける
+"----------------------------
+inoremap <silent> jj <Esc><Right>
+
+set softtabstop=2
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set autoindent
+set smartindent
+
+set showtabline=2
+
+"remap paste
+"----------------------------
+nnoremap P p
+nnoremap p P
+
+"http://www.daisaru11.jp/blog/2011/08/vim%E3%81%A7%E6%8C%BF%E5%85%A5%E3%83%A2%E3%83%BC%E3%83%89%E3%81%AB%E3%81%AA%E3%82%89%E3%81%9A%E3%81%AB%E6%94%B9%E8%A1%8C%E3%82%92%E5%85%A5%E3%82%8C%E3%82%8B/
+"----------------------------
+nnoremap <CR> o<ESC>
+
+"http://qiita.com/usamik26/items/f733add9ca910f6c5784
+"----------------------------
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
+
+
+
+" 閉じタグ補完
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
+vnoremap { "zdi^V{<C-R>z}<LEFT>
+vnoremap [ "zdi^V[<C-R>z]<LEFT>
+vnoremap ( "zdi^V(<C-R>z)<LEFT>
+vnoremap " "zdi^V"<C-R>z^V"<LEFT>
+vnoremap ' "zdi'<C-R>z'<LEFT>
