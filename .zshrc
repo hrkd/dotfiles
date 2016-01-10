@@ -83,6 +83,14 @@ alias g='git'
 alias fuck='tmux kill-server'
 alias ready='mux hrkd_dev'
 
+# see http://qiita.com/matsu_chara/items/8372616f52934c657214
+alias -s sh='sh'
+
+# make issues branch
+function issue() {
+  command git ch dev;git pull origin dev;git checkout -b issues/$1;git commit --allow-empty -m "resolve #$1";git push -u origin issues/$1;
+}
+
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 [[ -s /Users/hrkd/.tmuxinator/scripts/tmuxinator ]] && source /Users/hrkd/.tmuxinator/scripts/tmuxinator
 
