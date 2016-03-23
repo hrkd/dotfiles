@@ -50,11 +50,9 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'othree/eregex.vim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'othree/eregex.vim'
-NeoBundle 'scrooloose/syntastic'
 
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'christoomey/vim-tmux-navigator'
-NeoBundle 'wavded/vim-stylus'
 NeoBundle 'scrooloose/nerdtree'
 
 "インデントをわかりやすく表示
@@ -64,6 +62,11 @@ NeoBundle 'violetyk/cake.vim'
 
 NeoBundle 'sophacles/vim-processing'
 NeoBundle 'thinca/vim-quickrun'
+
+"syntax
+NeoBundle 'wavded/vim-stylus'
+NeoBundle 'slim-template/vim-slim'
+NeoBundle 'scrooloose/syntastic'
 
 filetype plugin indent on     " Required!
 
@@ -305,3 +308,17 @@ let g:quickrun_config.processing =  {
 \     'command': 'processing-java',
 \     'exec': '%c --sketch=$PWD/ --output=/Library/Processing --run --force',
 \   }
+
+"see http://masawada.hatenablog.jp/entry/2015/08/07/121520
+let g:syntastic_javascript_checkers = ['jshint']
+
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
