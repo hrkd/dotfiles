@@ -14,6 +14,7 @@ brew doctor
 brew install caskroom/cask/brew-cask
 brew install tmux
 brew install nodejs
+brew install nvm
 brew install tig
 brew install imagemagick
 brew install postgresql
@@ -45,7 +46,7 @@ brew cask install microsoft-office
 brew cask install heroku-toolbelt
 
 #chef
-sudo chef gem install knife-solo
+#sudo chef gem install knife-solo
 
 #dotfilesを表示
 defaults write com.apple.finder AppleShowAllFiles -boolean true
@@ -58,8 +59,8 @@ sudo gem install compass
 sudo gem install mysql2 -v '0.3.17'
 sudo gem install execjs
 
-sudo npm install -g gulp
-sudo npm install -g grunt-cli
-sudo npm install -g bower
-sudo npm install -g yo
-sudo npm install -g generator-angular
+#sudo npm install -g gulp
+#sudo npm install -g grunt-cli
+#sudo npm install -g bower
+#sudo npm install -g yo
+#sudo npm install -g generator-angular
