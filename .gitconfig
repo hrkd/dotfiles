@@ -9,3 +9,5 @@
   c = commit
   a = add
   l = log --oneline --decorate --graph --branches --tags --remotes
+[core]
+	editor = vim -c \"set fenc=utf-8\"
