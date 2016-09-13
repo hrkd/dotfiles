@@ -67,6 +67,18 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'wavded/vim-stylus'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
+NeoBundle 'othree/yajs.vim'
+NeoBundle 'blockloop/vim-swigjs'
+NeoBundle 'gcorne/vim-sass-lint'
+
+
+"see http://qiita.com/akameco/items/dff88a40db7df3903f78
+NeoBundle 'editorconfig/editorconfig-vim'
+
+"検索結果の一括置換
+NeoBundle 'thinca/vim-qfreplace'
 
 filetype plugin indent on     " Required!
 
@@ -154,7 +166,7 @@ highlight ZenkakuSpace cterm=underline ctermfg=red guibg=darkgray
 match ZenkakuSpace /　/
 set cursorline " カーソル行をハイライト
 
-" set ttyfast 
+" set ttyfast
 "----------------------------
 
 let g:neocomplcache_enable_at_startup = 1
@@ -213,10 +225,10 @@ inoremap <silent> jj <Esc><Right>
 "inoremap <C-h> <Left>
 "inoremap <C-l> <Right>
 
-set softtabstop=2
-set tabstop=2
-set shiftwidth=2
-set expandtab
+"set softtabstop=2
+"set tabstop=2
+"set shiftwidth=2
+"set expandtab
 set autoindent
 set smartindent
 
@@ -309,9 +321,17 @@ let g:quickrun_config.processing =  {
 \     'exec': '%c --sketch=$PWD/ --output=/Library/Processing --run --force',
 \   }
 
-"see http://masawada.hatenablog.jp/entry/2015/08/07/121520
-let g:syntastic_javascript_checkers = ['jshint']
+"need npm install >> npm install -g jsxhint
+let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_sass_checkers= ['sass_lint']
+let g:syntastic_scss_checkers= ['sass_lint']
 
+fun! SetScssConfig()
+  let scssConfig = findfile('.sass-lint.yml', '.;')
+  if scssConfig != ''
+    let b:syntastic_scss_sass_lint_args = '--config ' . scssConfig
+  endif
+endf
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -322,3 +342,6 @@ set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+
+"see http://qiita.com/QuestionDriven/items/83cba09d0010e8e31315
+autocmd BufRead,BufNewFile *.es6 setfiletype javascript
