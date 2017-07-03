@@ -10,6 +10,8 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 #oh-my-zsh
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
+chsh -s $(which zsh)
+
 brew doctor
 brew install caskroom/cask/brew-cask
 brew install tmux
