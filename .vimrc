@@ -12,7 +12,6 @@ endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-call neobundle#end()
 
 " Let NeoBundle manage NeoBundle
 "----------------------------
@@ -79,6 +78,8 @@ NeoBundle 'editorconfig/editorconfig-vim'
 
 "検索結果の一括置換
 NeoBundle 'thinca/vim-qfreplace'
+
+call neobundle#end()
 
 filetype plugin indent on     " Required!
 
