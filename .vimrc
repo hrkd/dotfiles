@@ -47,7 +47,6 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'othree/eregex.vim'
-NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'othree/eregex.vim'
 
 NeoBundle 'tpope/vim-fugitive'
@@ -71,7 +70,8 @@ NeoBundle 'mxw/vim-jsx'
 NeoBundle 'othree/yajs.vim'
 NeoBundle 'blockloop/vim-swigjs'
 NeoBundle 'gcorne/vim-sass-lint'
-
+NeoBundle 'ryym/vim-riot'
+NeoBundle 'digitaltoad/vim-pug'
 
 "see http://qiita.com/akameco/items/dff88a40db7df3903f78
 NeoBundle 'editorconfig/editorconfig-vim'
@@ -346,3 +346,6 @@ let g:syntastic_check_on_wq = 0
 
 "see http://qiita.com/QuestionDriven/items/83cba09d0010e8e31315
 autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+
+"https://stackoverflow.com/questions/8671046/vim-folding-syntax-for-scss
+autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
